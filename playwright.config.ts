@@ -33,40 +33,41 @@ export default defineConfig({
   },
 
   /* Configure projects for major browsers */
-  projects: [    {
-    name: 'Google Chrome',
-    grep: /@desktop/,
-    use: {
-      viewport: {
-        width: 1920,
-        height: 1440,
+  projects: [
+    {
+      name: 'Google Chrome',
+      grep: /@desktop/,
+      use: {
+        viewport: {
+          width: 1920,
+          height: 1440,
+        },
+        channel: 'chrome',
       },
-      channel: 'chrome',
     },
-  },
-  /* Test against mobile viewports. */
-  {
-    name: 'Mobile Chrome',
-    grep: /@mobile/,
-    use: {
-      userAgent:
-        'Mozilla/5.0 (Linux; Android 9; Pixel 3 Build/PQ1A.181105.017.A1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.29 Mobile Safari/537.36',
-      viewport: {
-        width: 393,
-        height: 1440,
+    /* Test against mobile viewports. */
+    {
+      name: 'Mobile Chrome',
+      grep: /@mobile/,
+      use: {
+        userAgent:
+          'Mozilla/5.0 (Linux; Android 9; Pixel 3 Build/PQ1A.181105.017.A1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.29 Mobile Safari/537.36',
+        viewport: {
+          width: 393,
+          height: 1440,
+        },
+        deviceScaleFactor: 2.75,
+        isMobile: true,
+        hasTouch: true,
+        channel: 'chrome',
       },
-      deviceScaleFactor: 2.75,
-      isMobile: true,
-      hasTouch: true,
-      channel: 'chrome',
     },
-  },
-  {
-    name: 'api',
-    testDir: './tests/api/',
-    fullyParallel: false,
-    retries: 1,
-    timeout: 300_000,
-  },
+    {
+      name: 'api',
+      testDir: './tests/api/',
+      fullyParallel: false,
+      retries: 1,
+      timeout: 300_000,
+    },
   ],
 });
