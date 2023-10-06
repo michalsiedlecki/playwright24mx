@@ -18,10 +18,15 @@ test.describe('Product page', () => {
   test(`Add product to cart from search input ${Tag.TAG_SECTION}${Tag.WEBAPP}${Tag.ALL}${Tag.SMOKE_TEST}`, async ({
     page,
     baseURL,
+    isMobile,
   }) => {
     const searchProduct = 'Raven Airborne Split MX Helmet Kit Black-Gray';
     await page.goto(baseURL!);
-    await headerPage.searchInput.fill(searchProduct);
+    if (isMobile) {
+      await headerPage.mobileSearchInput.fill(searchProduct);
+    } else {
+      await headerPage.searchInput.fill(searchProduct);
+    }
     await page.keyboard.press('Enter');
     await searchPage.productTitle.filter({ hasText: searchProduct }).click();
     await productPage.sizeSelect.click();
