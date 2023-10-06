@@ -1,0 +1,22 @@
+{
+  "name": "playwright24mx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michalsiedlecki/playwright24mx.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michalsiedlecki/playwright24mx/issues"
+  },
+  "homepage": "https://github.com/michalsiedlecki/playwright24mx#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.38.1",
+    "@types/node": "^20.8.2"
+  }
+}
